@@ -1,0 +1,32 @@
+# virtualenv
+.venv/
+
+# large downloaded assets -- scripts/download_assets.sh fetches these
+data/glove/
+data/hf_cache/
+data/nltk_data/
+
+# derived caches (regenerated on first run)
+data/cache/
+data/w2v/
+
+# run logs
+logs/
+
+# latex intermediates
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+
+__pycache__/
+*.pyc
+.DS_Store
+
+# latex intermediates (CVPR report)
+report_cvpr/*.aux
+report_cvpr/*.log
+report_cvpr/*.out
+report_cvpr/*.bbl
+report_cvpr/*.blg
+report_cvpr/*.brf

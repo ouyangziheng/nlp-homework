@@ -1,0 +1,130 @@
+{
+  "task": "Task 1 - Bag of Words + Logistic Regression",
+  "split": {
+    "labels": [
+      "business",
+      "politics",
+      "sports"
+    ],
+    "sizes": {
+      "train": 9215,
+      "val": 1151,
+      "test": 1153
+    },
+    "distribution": {
+      "train": {
+        "business": 1157,
+        "politics": 1134,
+        "sports": 6924
+      },
+      "val": {
+        "business": 124,
+        "politics": 152,
+        "sports": 875
+      },
+      "test": {
+        "business": 148,
+        "politics": 165,
+        "sports": 840
+      }
+    }
+  },
+  "results": {
+    "binary": {
+      "method": "bow_binary",
+      "vocab_size": 127767,
+      "train_shape": [
+        9215,
+        127767
+      ],
+      "classifier": {
+        "type": "LogisticRegression",
+        "max_iter": 1000,
+        "C": 1.0
+      },
+      "val": {
+        "accuracy": 0.9887054735013032,
+        "macro_f1": 0.9710919155189144,
+        "per_class_f1": {
+          "business": 0.9508196721311475,
+          "politics": 0.9641693811074918,
+          "sports": 0.9982866933181039
+        }
+      },
+      "test": {
+        "accuracy": 0.9887250650477016,
+        "macro_f1": 0.9738344951001684,
+        "per_class_f1": {
+          "business": 0.9586206896551724,
+          "politics": 0.9640718562874252,
+          "sports": 0.9988109393579072
+        }
+      },
+      "test_report": "              precision    recall  f1-score   support\n\n    business     0.9789    0.9392    0.9586       148\n    politics     0.9527    0.9758    0.9641       165\n      sports     0.9976    1.0000    0.9988       840\n\n    accuracy                         0.9887      1153\n   macro avg     0.9764    0.9716    0.9738      1153\nweighted avg     0.9888    0.9887    0.9887      1153\n"
+    },
+    "freq": {
+      "method": "bow_freq",
+      "vocab_size": 127767,
+      "train_shape": [
+        9215,
+        127767
+      ],
+      "classifier": {
+        "type": "LogisticRegression",
+        "max_iter": 1000,
+        "C": 1.0
+      },
+      "val": {
+        "accuracy": 0.9843614248479583,
+        "macro_f1": 0.9651680588740144,
+        "per_class_f1": {
+          "business": 0.9435483870967742,
+          "politics": 0.9570957095709571,
+          "sports": 0.9948600799543118
+        }
+      },
+      "test": {
+        "accuracy": 0.9878577623590633,
+        "macro_f1": 0.9736512951070594,
+        "per_class_f1": {
+          "business": 0.9657534246575342,
+          "politics": 0.9575757575757575,
+          "sports": 0.997624703087886
+        }
+      },
+      "test_report": "              precision    recall  f1-score   support\n\n    business     0.9792    0.9527    0.9658       148\n    politics     0.9576    0.9576    0.9576       165\n      sports     0.9953    1.0000    0.9976       840\n\n    accuracy                         0.9879      1153\n   macro avg     0.9773    0.9701    0.9737      1153\nweighted avg     0.9878    0.9879    0.9878      1153\n"
+    },
+    "tfidf": {
+      "method": "bow_tfidf",
+      "vocab_size": 127767,
+      "train_shape": [
+        9215,
+        127767
+      ],
+      "classifier": {
+        "type": "LogisticRegression",
+        "max_iter": 1000,
+        "C": 1.0
+      },
+      "val": {
+        "accuracy": 0.9817549956559514,
+        "macro_f1": 0.9599520746626308,
+        "per_class_f1": {
+          "business": 0.9333333333333333,
+          "politics": 0.9533333333333334,
+          "sports": 0.9931895573212258
+        }
+      },
+      "test": {
+        "accuracy": 0.9809193408499567,
+        "macro_f1": 0.9613210491202892,
+        "per_class_f1": {
+          "business": 0.9323843416370107,
+          "politics": 0.9580838323353293,
+          "sports": 0.9934949733885275
+        }
+      },
+      "test_report": "              precision    recall  f1-score   support\n\n    business     0.9850    0.8851    0.9324       148\n    politics     0.9467    0.9697    0.9581       165\n      sports     0.9871    1.0000    0.9935       840\n\n    accuracy                         0.9809      1153\n   macro avg     0.9729    0.9516    0.9613      1153\nweighted avg     0.9810    0.9809    0.9806      1153\n"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "task": "Task 3 - BERT-base-uncased fine-tuning",
+  "model": "google-bert/bert-base-uncased",
+  "config": {
+    "max_length": 64,
+    "epochs": 3,
+    "batch_size": 32,
+    "eval_batch_size": 128,
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "fp16": true
+  },
+  "split": {
+    "labels": [
+      "business",
+      "politics",
+      "sports"
+    ],
+    "sizes": {
+      "train": 9215,
+      "val": 1151,
+      "test": 1153
+    },
+    "distribution": {
+      "train": {
+        "business": 1157,
+        "politics": 1134,
+        "sports": 6924
+      },
+      "val": {
+        "business": 124,
+        "politics": 152,
+        "sports": 875
+      },
+      "test": {
+        "business": 148,
+        "politics": 165,
+        "sports": 840
+      }
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.2815865712537844,
+      "val_accuracy": 0.9765421372719374,
+      "val_macro_f1": 0.9422174506366003
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.046227100144379724,
+      "val_accuracy": 0.9756733275412685,
+      "val_macro_f1": 0.9432834902100957
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.0175023545630716,
+      "val_accuracy": 0.9756733275412685,
+      "val_macro_f1": 0.9424439359267733
+    }
+  ],
+  "val": {
+    "epoch": 3,
+    "train_loss": 0.0175023545630716,
+    "val_accuracy": 0.9756733275412685,
+    "val_macro_f1": 0.9424439359267733
+  },
+  "test": {
+    "accuracy": 0.9748482220294883,
+    "macro_f1": 0.9432806206849084,
+    "per_class_f1": {
+      "business": 0.9172413793103448,
+      "politics": 0.9161676646706587,
+      "sports": 0.9964328180737217
+    }
+  },
+  "test_report": "              precision    recall  f1-score   support\n\n    business     0.9366    0.8986    0.9172       148\n    politics     0.9053    0.9273    0.9162       165\n      sports     0.9952    0.9976    0.9964       840\n\n    accuracy                         0.9748      1153\n   macro avg     0.9457    0.9412    0.9433      1153\nweighted avg     0.9749    0.9748    0.9748      1153\n"
+}

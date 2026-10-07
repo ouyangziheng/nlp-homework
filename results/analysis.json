@@ -1,0 +1,147 @@
+{
+  "split": {
+    "labels": [
+      "business",
+      "politics",
+      "sports"
+    ],
+    "sizes": {
+      "train": 9215,
+      "val": 1151,
+      "test": 1153
+    },
+    "distribution": {
+      "train": {
+        "business": 1157,
+        "politics": 1134,
+        "sports": 6924
+      },
+      "val": {
+        "business": 124,
+        "politics": 152,
+        "sports": 875
+      },
+      "test": {
+        "business": 148,
+        "politics": 165,
+        "sports": 840
+      }
+    }
+  },
+  "comparison": [
+    {
+      "key": "bow_binary",
+      "task": "Task 1",
+      "name": "Binary Bag of Words",
+      "accuracy": 0.9887250650477016,
+      "macro_f1": 0.9738344951001684,
+      "per_class_f1": {
+        "business": 0.9586206896551724,
+        "politics": 0.9640718562874252,
+        "sports": 0.9988109393579072
+      }
+    },
+    {
+      "key": "bow_freq",
+      "task": "Task 1",
+      "name": "Word Frequency",
+      "accuracy": 0.9878577623590633,
+      "macro_f1": 0.9736512951070594,
+      "per_class_f1": {
+        "business": 0.9657534246575342,
+        "politics": 0.9575757575757575,
+        "sports": 0.997624703087886
+      }
+    },
+    {
+      "key": "bow_tfidf",
+      "task": "Task 1",
+      "name": "TF-IDF",
+      "accuracy": 0.9809193408499567,
+      "macro_f1": 0.9613210491202892,
+      "per_class_f1": {
+        "business": 0.9323843416370107,
+        "politics": 0.9580838323353293,
+        "sports": 0.9934949733885275
+      }
+    },
+    {
+      "key": "embed_glove",
+      "task": "Task 2",
+      "name": "Pre-trained GloVe (100d)",
+      "accuracy": 0.98959236773634,
+      "macro_f1": 0.9770063857654621,
+      "per_class_f1": {
+        "business": 0.9664429530201343,
+        "politics": 0.9663608562691132,
+        "sports": 0.9982153480071386
+      }
+    },
+    {
+      "key": "embed_ag",
+      "task": "Task 2",
+      "name": "Word2Vec on AG News (100d)",
+      "accuracy": 0.981786643538595,
+      "macro_f1": 0.9577341692466871,
+      "per_class_f1": {
+        "business": 0.9355932203389831,
+        "politics": 0.9393939393939394,
+        "sports": 0.9982153480071386
+      }
+    },
+    {
+      "key": "embed_nyt",
+      "task": "Task 2",
+      "name": "Word2Vec on NYT (100d)",
+      "accuracy": 0.986990459670425,
+      "macro_f1": 0.9713261178539739,
+      "per_class_f1": {
+        "business": 0.9556313993174061,
+        "politics": 0.9607250755287009,
+        "sports": 0.9976218787158145
+      }
+    },
+    {
+      "key": "bert",
+      "task": "Task 3",
+      "name": "BERT-base-uncased (len 64, 3 ep)",
+      "accuracy": 0.9748482220294883,
+      "macro_f1": 0.9432806206849084,
+      "per_class_f1": {
+        "business": 0.9172413793103448,
+        "politics": 0.9161676646706587,
+        "sports": 0.9964328180737217
+      }
+    }
+  ],
+  "truncation_analysis": {
+    "median_wordpieces_full_doc": 847.0,
+    "mean_wordpieces_full_doc": 819.1431049436253,
+    "p95_wordpieces_full_doc": 1347.1999999999996,
+    "docs_longer_than_64": 1153,
+    "docs_total": 1153,
+    "frac_docs_truncated": 1.0,
+    "mean_fraction_of_doc_seen": 0.10834888833156275,
+    "median_fraction_of_doc_seen": 0.0755608028335301
+  },
+  "truncation_control": {
+    "bow_binary_trunc64": {
+      "accuracy": 0.9566348655680833,
+      "macro_f1": 0.9138216121236109,
+      "per_class_f1": {
+        "business": 0.88,
+        "politics": 0.8773006134969326,
+        "sports": 0.9841642228739003
+      }
+    },
+    "glove_trunc64": {
+      "accuracy": 0.9679098005203816,
+      "macro_f1": 0.9377429905375378,
+      "per_class_f1": {
+        "business": 0.92,
+        "politics": 0.9050632911392406,
+        "sports": 0.9881656804733728
+      }
+    }
+  }
+}

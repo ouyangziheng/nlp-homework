@@ -1,0 +1,149 @@
+{
+  "task": "Task 2 - Averaged 100-d word embeddings + Logistic Regression",
+  "config": {
+    "dim": 100,
+    "window": 5,
+    "min_count": 2,
+    "epochs": 10,
+    "workers": 1,
+    "max_iter": 3000,
+    "C": 1.0,
+    "sources": "glove,ag,nyt"
+  },
+  "split": {
+    "labels": [
+      "business",
+      "politics",
+      "sports"
+    ],
+    "sizes": {
+      "train": 9215,
+      "val": 1151,
+      "test": 1153
+    },
+    "distribution": {
+      "train": {
+        "business": 1157,
+        "politics": 1134,
+        "sports": 6924
+      },
+      "val": {
+        "business": 124,
+        "politics": 152,
+        "sports": 875
+      },
+      "test": {
+        "business": 148,
+        "politics": 165,
+        "sports": 840
+      }
+    }
+  },
+  "results": {
+    "glove": {
+      "method": "embed_glove",
+      "embedding_vocab": 400001,
+      "dim": 100,
+      "test_token_coverage": 0.9808032465952277,
+      "all_oov_docs": {
+        "train": 0,
+        "val": 0,
+        "test": 0
+      },
+      "classifier": {
+        "type": "StandardScaler + LogisticRegression",
+        "max_iter": 3000,
+        "C": 1.0
+      },
+      "val": {
+        "accuracy": 0.9834926151172894,
+        "macro_f1": 0.9602647056659608,
+        "per_class_f1": {
+          "business": 0.9274193548387096,
+          "politics": 0.9573770491803278,
+          "sports": 0.9959977129788451
+        }
+      },
+      "test": {
+        "accuracy": 0.98959236773634,
+        "macro_f1": 0.9770063857654621,
+        "per_class_f1": {
+          "business": 0.9664429530201343,
+          "politics": 0.9663608562691132,
+          "sports": 0.9982153480071386
+        }
+      },
+      "test_report": "              precision    recall  f1-score   support\n\n    business     0.9600    0.9730    0.9664       148\n    politics     0.9753    0.9576    0.9664       165\n      sports     0.9976    0.9988    0.9982       840\n\n    accuracy                         0.9896      1153\n   macro avg     0.9776    0.9765    0.9770      1153\nweighted avg     0.9896    0.9896    0.9896      1153\n"
+    },
+    "ag": {
+      "method": "embed_ag",
+      "embedding_vocab": 43706,
+      "dim": 100,
+      "test_token_coverage": 0.9551910292467187,
+      "all_oov_docs": {
+        "train": 0,
+        "val": 0,
+        "test": 0
+      },
+      "classifier": {
+        "type": "StandardScaler + LogisticRegression",
+        "max_iter": 3000,
+        "C": 1.0
+      },
+      "val": {
+        "accuracy": 0.9808861859252823,
+        "macro_f1": 0.9542853797743872,
+        "per_class_f1": {
+          "business": 0.9224489795918367,
+          "politics": 0.9449838187702265,
+          "sports": 0.9954233409610984
+        }
+      },
+      "test": {
+        "accuracy": 0.981786643538595,
+        "macro_f1": 0.9577341692466871,
+        "per_class_f1": {
+          "business": 0.9355932203389831,
+          "politics": 0.9393939393939394,
+          "sports": 0.9982153480071386
+        }
+      },
+      "test_report": "              precision    recall  f1-score   support\n\n    business     0.9388    0.9324    0.9356       148\n    politics     0.9394    0.9394    0.9394       165\n      sports     0.9976    0.9988    0.9982       840\n\n    accuracy                         0.9818      1153\n   macro avg     0.9586    0.9569    0.9577      1153\nweighted avg     0.9817    0.9818    0.9818      1153\n"
+    },
+    "nyt": {
+      "method": "embed_nyt",
+      "embedding_vocab": 57618,
+      "dim": 100,
+      "test_token_coverage": 0.9838311906079255,
+      "all_oov_docs": {
+        "train": 0,
+        "val": 0,
+        "test": 0
+      },
+      "classifier": {
+        "type": "StandardScaler + LogisticRegression",
+        "max_iter": 3000,
+        "C": 1.0
+      },
+      "val": {
+        "accuracy": 0.9826238053866203,
+        "macro_f1": 0.9549650570821181,
+        "per_class_f1": {
+          "business": 0.9256198347107438,
+          "politics": 0.9415584415584416,
+          "sports": 0.997716894977169
+        }
+      },
+      "test": {
+        "accuracy": 0.986990459670425,
+        "macro_f1": 0.9713261178539739,
+        "per_class_f1": {
+          "business": 0.9556313993174061,
+          "politics": 0.9607250755287009,
+          "sports": 0.9976218787158145
+        }
+      },
+      "test_report": "              precision    recall  f1-score   support\n\n    business     0.9655    0.9459    0.9556       148\n    politics     0.9578    0.9636    0.9607       165\n      sports     0.9964    0.9988    0.9976       840\n\n    accuracy                         0.9870      1153\n   macro avg     0.9733    0.9695    0.9713      1153\nweighted avg     0.9869    0.9870    0.9870      1153\n"
+    }
+  }
+}
